@@ -1,0 +1,53 @@
+<script lang="ts">
+	import { Button } from '$lib/components/ui/button';
+	import { redirect } from '@sveltejs/kit';
+	import { authHandlers, authStore } from '../store/authStore';
+
+	let action = '';
+	let newEmail = '';
+	let newPass = '';
+
+	async function handleSubmit() {
+		if (!action) {
+			return;
+		}
+
+		if (action === 'updatePass') {
+			await authHandlers.updatePassword(newPass);
+		}
+
+		if (action === 'updateEmail') {
+		}
+	}
+</script>
+
+<div>
+	<div>
+		<Button
+			on:click={() => {
+				action = 'updateEmail';
+			}}>Update Email</Button
+		>
+		<Button
+			on:click={() => {
+				action = 'updatePass';
+			}}>Update Password</Button
+		>
+	</div>
+	{#if action === 'updatePass'}
+		<form action="">
+			<label for="">
+				<input bind:value={newPass} type="password" placeholder="New Password" />
+			</label>
+			<Button on:click={handleSubmit}>Submit</Button>
+		</form>
+	{/if}
+	{#if action === 'updateEmail'}
+		<form action="">
+			<label>
+				<input bind:value={newEmail} type="email" placeholder="New Email" />
+			</label>
+			<Button on:click={handleSubmit}>Submit</Button>
+		</form>
+	{/if}
+</div>
