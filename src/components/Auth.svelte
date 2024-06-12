@@ -1,6 +1,6 @@
 <script lang="ts">
+	import '../app.css';
 	import { Button } from '$lib/components/ui/button';
-	import { redirect } from '@sveltejs/kit';
 	import { authHandlers, authStore } from '../store/authStore';
 
 	let register = false;
@@ -31,20 +31,18 @@
 	}
 </script>
 
-<div class="h-[90vh] flex justify-center items-center">
-	<div
-		class="flex flex-col min-h-[700px] gap-16 justify-center border-4 border-black p-[90px] items-center rounded-full"
-	>
+<div class="m-auto flex justify-center items-center w-full">
+	<div class="flex flex-col min-h-[700px] w-full gap-16 justify-center items-center rounded-full">
 		<h1 class="title">{register ? 'Sign Up' : 'Log In'}</h1>
-		<form action="" class="flex flex-col items-center gap-8">
-			<label for="">
+		<form action="" class="flex flex-col items-center gap-8 w-full">
+			<label for="" class="w-full flex justify-center">
 				<input class="input" bind:value={email} type="email" placeholder="Email" />
 			</label>
-			<label>
+			<label class="w-full flex justify-center">
 				<input class="input" bind:value={password} type="password" placeholder="Password" />
 			</label>
 			{#if register}
-				<label>
+				<label class="w-full flex justify-center">
 					<input
 						class="input"
 						bind:value={confirmPassword}
@@ -53,9 +51,9 @@
 					/>
 				</label>
 			{/if}
-			<Button
-				class="hover:bg-green-600 hover:text-black hover:scale-105 rounded-full active:scale-95 w-52 h-14"
-				on:click={handleSubmit}>Submit</Button
+			<button
+				class="bg-rasinblack rounded-[25px] max-w-[400px] p-4 text-light hover:scale-105 hover:bg-caraibben transition-transform font-semibold text-[20px] w-full"
+				on:click={handleSubmit}>Submit</button
 			>
 		</form>
 		<div class="justify-center gap-2 items-center flex flex-col">
@@ -95,18 +93,18 @@
 
 <style>
 	.link {
-		@apply cursor-pointer hover:scale-[1.02] active:scale-[0.98];
+		@apply cursor-pointer hover:scale-105 transition-transform;
 
 		& span {
-			@apply ml-2 font-semibold text-green-600;
+			@apply ml-2 font-semibold hover:text-caraibben transition-colors;
 		}
 	}
 
 	.title {
-		@apply font-bold text-[30px];
+		@apply text-rasinblack font-bold font-nicomoji text-[30px];
 	}
 
 	.input {
-		@apply border-4 p-4 w-[400px] h-16 border-black rounded-full;
+		@apply border-4 p-4 w-full max-w-[400px] h-16 border-rasinblack  rounded-[25px];
 	}
 </style>

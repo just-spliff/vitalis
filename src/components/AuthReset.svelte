@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
 	import { redirect } from '@sveltejs/kit';
 	import { authHandlers, authStore } from '../store/authStore';
 
@@ -22,19 +21,19 @@
 	}
 </script>
 
-<div class="flex flex-col items-center justify-center gap-10">
-	<div class="flex flex-row items-center justify-between gap-4">
-		<Button
-			class="rounded-full h-14 w-40"
+<div class="flex flex-col w-full items-center justify-center gap-10">
+	<div class="flex flex-col w-full items-center justify-between gap-4">
+		<button
+			class="rounded-[25px] bg-rasinblack w-full font-semibold text-[20px] p-4 text-light"
 			on:click={() => {
 				action = 'updateEmail';
-			}}>Update Email</Button
+			}}>Update Email</button
 		>
-		<Button
-			class="rounded-full h-14 w-40"
+		<button
+			class="rounded-[25px] w-full bg-rasinblack font-semibold p-4 text-light text-[20px]"
 			on:click={() => {
 				action = 'updatePass';
-			}}>Update Password</Button
+			}}>Update Password</button
 		>
 	</div>
 	{#if action === 'updatePass'}
@@ -42,10 +41,7 @@
 			<label for="">
 				<input class="input" bind:value={newPass} type="password" placeholder="New Password" />
 			</label>
-			<Button
-				class="bg-green-600 hover:bg-green-500  active:scale-95 font-bold p-3 rounded-full hover:scale-105"
-				on:click={handleSubmit}>Submit</Button
-			>
+			<button class="sbm" on:click={handleSubmit}>Submit</button>
 		</form>
 	{/if}
 	{#if action === 'updateEmail'}
@@ -53,20 +49,20 @@
 			<label>
 				<input class="input" bind:value={newEmail} type="email" placeholder="New Email" />
 			</label>
-			<Button
-				class="bg-green-600 hover:bg-green-500  active:scale-95 font-bold p-3 rounded-full hover:scale-105"
-				on:click={handleSubmit}>Submit</Button
-			>
+			<button class="sbm" on:click={handleSubmit}>Submit</button>
 		</form>
 	{/if}
 </div>
 
 <style>
+	.sbm {
+		@apply text-[18px] font-semibold hover:scale-105 transition-transform;
+	}
 	.frm {
-		@apply flex flex-row gap-2 mb-2;
+		@apply flex flex-row gap-2 mb-2 items-center;
 	}
 
 	.input {
-		@apply border-4 p-4 w-64 h-5 border-black rounded-full;
+		@apply border-4 p-4 rounded-[25px];
 	}
 </style>

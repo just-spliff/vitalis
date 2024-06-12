@@ -27,6 +27,4 @@
 </script>
 
 <Navbar />
-<main>
-	<slot />
-</main>
+<slot />
