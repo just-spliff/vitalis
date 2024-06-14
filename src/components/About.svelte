@@ -304,6 +304,7 @@
 
 <style>
 	.vertical {
-		writing-mode: sideways-lr;
+		writing-mode: vertical-lr;
+		@apply rotate-180;
 	}
 </style>
