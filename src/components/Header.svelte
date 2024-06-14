@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div
-				class="flex flex-col bg-rasinblack rounded-[25px] flex-1 items-center justify-center large:p-8 mid:p-8 small:p-8 ss:p-2 w-full h-full"
+				class="flex flex-col bg-rasinblack rounded-[25px] flex-1 items-center justify-center large:p-8 mid:p-8 small:p-8 ss:p-2 ss:px-6 w-full h-full"
 			>
 				<div class="flex flex-col gap-2 items-center">
 					<h2 class="text-light font-nicomoji ss:text-[30px] large:text-[50px] p-0 m-0">50</h2>
