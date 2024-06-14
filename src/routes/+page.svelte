@@ -4,8 +4,5 @@
 	import Header from '../components/Header.svelte';
 </script>
 
-<svelte:head>
-	<meta property="description" content="Hello" />
-</svelte:head>
 <Header />
 <About />
