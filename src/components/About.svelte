@@ -251,10 +251,10 @@
 					<h3 class="text_section-name vertical">Contact</h3>
 					<div class="flex flex-col gap-[20px] w-full max-w-[453px]">
 						{#each contact as { icon, content }}
-							<div class="flex flex-row items-center gap-[20px]">
+							<div class="flex flex-row items-center gap-[20px] w-max">
 								<i class="{icon} large:text-[40px] mid:text-[40px] small:text-[40px] ss:text-[25px]"
 								></i>
-								<h4 class="text_section hover:scale-105 transition-transform">
+								<h4 class="text_section hover:scale-105 transition-transform w-max">
 									{content}
 								</h4>
 							</div>
