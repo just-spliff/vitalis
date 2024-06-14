@@ -1,0 +1,57 @@
+<script>
+	import SectionNumb from './SectionNumb.svelte';
+
+	let about_us =
+		'Welcome to Vitalis, where your health and well-being are our top priorities. We are a premium rehabilitation facility dedicated to providing the highest standard of physiotherapy care. Our team of experienced professionals is committed to helping you achieve your health goals through personalized treatment plans and state-of-the-art techniques, including the innovative use of virtual reality in rehabilitation.';
+	let mission =
+		"Our mission is to help you achieve optimal health and functional independence through personalized rehabilitation programs. We believe in the power of tailored treatment plans, designed to address each patient's unique needs. By using evidence-based practices and the latest advancements in physiotherapy, including VR technology, we ensure that you receive the best possible care to facilitate your recovery and enhance your quality of life.";
+</script>
+
+<about id="about">
+	<div class="flex flex-col mt-[20px] gap-[20px]">
+		<div class="flex flex-row w-full gap-[20px] justify-between">
+			<div class="flex flex-col gap-[20px] flex-1">
+				<SectionNumb number="1." name="About us" />
+				<p class="section_txt">
+					{about_us}
+				</p>
+			</div>
+			<div class="flex flex-2 max-w-[736px] h-[528px]">
+				<img
+					src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+					alt=""
+					class="object-cover rounded-[25px]"
+				/>
+			</div>
+		</div>
+		<div>
+			<div class="flex flex-row gap-[20px]">
+				<div class="flex flex-col w-full max-w-[737px] gap-[20px]">
+					<div
+						class=" flex items-center justify-center h-[131px] border-rasinblack border-[8px] rounded-[25px]"
+					>
+						<img src="./arrow_right_black.png" alt="" class="flex object-cover max-h-[52px]" />
+					</div>
+					<div class="flex">
+						<img
+							src="https://images.pexels.com/photos/8313234/pexels-photo-8313234.jpeg"
+							alt=""
+							class="object-cover flex rounded-[25px] min-h-[566px]"
+						/>
+					</div>
+				</div>
+				<div class="flex flex-col flex-1 gap-[20px]">
+					<SectionNumb number="2." name="Our mission" />
+					<p class="section_txt">{mission}</p>
+					<SectionNumb number="3." name="Our values" />
+				</div>
+			</div>
+		</div>
+	</div></about
+>
+
+<style>
+	.section_txt {
+		@apply font-montserrat text-justify text-[27px] leading-[33px] font-medium;
+	}
+</style>
